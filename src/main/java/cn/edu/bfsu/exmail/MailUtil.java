@@ -16,7 +16,7 @@ public class MailUtil {
 	 * @param email
 	 * @return auth_key
 	 */
-	public static String getAuthKey(String email) {
+	private static String getAuthKey(String email) {
 		String url = "http://openapi.exmail.qq.com:12211/openapi/mail/authkey";
 		List<NameValuePair> nvps = new ArrayList<NameValuePair>();
 		nvps.add(new BasicNameValuePair("alias", email));
