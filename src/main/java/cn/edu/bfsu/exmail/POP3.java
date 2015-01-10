@@ -16,9 +16,12 @@ import javax.mail.Store;
 public class POP3 {
 
 	/**
-	 * @param popServer pop3服务器地址
-	 * @param popUser   邮箱用户名
-	 * @param popPassword  邮箱密码
+	 * @param popServer
+	 *            pop3服务器地址
+	 * @param popUser
+	 *            邮箱用户名
+	 * @param popPassword
+	 *            邮箱密码
 	 * @return
 	 */
 	public boolean validate(String popServer, String popUser, String popPassword) {
@@ -31,16 +34,23 @@ public class POP3 {
 				return new PasswordAuthentication(u, p);
 			}
 		});
-
+		Store store = null;
 		try {
-			Store store = mailsession.getStore("pop3");
+			store = mailsession.getStore("pop3");
 			store.connect(popServer, u, p);
-			store.close();
 			b = true;
 		} catch (NoSuchProviderException e) {
 			e.printStackTrace();
 		} catch (MessagingException e) {
 			e.printStackTrace();
+		} finally {
+			if(store != null){
+				try {
+					store.close();
+				} catch (MessagingException e) {
+					e.printStackTrace();
+				}
+			}
 		}
 		return b;
 	}

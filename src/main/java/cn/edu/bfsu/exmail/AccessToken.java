@@ -1,12 +1,8 @@
 package cn.edu.bfsu.exmail;
 
-/**
- * @author stenio
- *
- */
 public class AccessToken {
 	
-	public static final String KEY = "你的publicKey";
+	public static final String KEY = "3dd1b0808cb48dd3af0487aff64e782d";
 	
 	private long expires_in;
 	
@@ -17,7 +13,7 @@ public class AccessToken {
 	private String refresh_token;
 	
 	private String access_token;
-
+	
 	public long getExpires_in() {
 		return expires_in;
 	}

@@ -8,17 +8,17 @@ public class MailUtilTest {
 	
 	@Test
 	public void testGetUnreadCount() {
-		MailUtil.getUnreadCount("hexin@bfsu.edu.cn");
+		System.out.println(MailUtil.getUnreadCount("hexin@bfsu.edu.cn"));
 	}
 
 	@Test
 	public void testGetSSOUrl() {
-		MailUtil.getSSOUrl("hexin@bfsu.edu.cn");
+		System.out.println(MailUtil.getSSOUrl("hexin@bfsu.edu.cn"));
 	}
 
 	@Test
 	public void testValidate() {
-		MailUtil.validate("xxx", "xxx");
+		System.out.println(new POP3().validate("pop.bfsu.edu.cn", "hexin@bfsu.edu.cn", ""));
 	}
 
 }

@@ -14,10 +14,6 @@ import org.apache.http.util.EntityUtils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-/**
- * @author stenio
- *
- */
 public class SimpleHttpClient {
 
 	public static <T> T doPost(String url, List<NameValuePair> headers, List<NameValuePair> params, Class<T> t) {
@@ -42,6 +38,7 @@ public class SimpleHttpClient {
 		} finally {
 			try {
 				response.close();
+				httpclient.close();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
