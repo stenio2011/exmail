@@ -2,7 +2,7 @@ package cn.edu.bfsu.exmail;
 
 public class AccessToken {
 	
-	public static final String KEY = "3dd1b0808cb48dd3af0487aff64e782d";
+	public static final String KEY = "3dd1b0808cb48dd3af0487aff64e7827";
 	
 	private long expires_in;
 	
